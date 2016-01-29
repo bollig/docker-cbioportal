@@ -37,7 +37,7 @@ RUN yum install -y java-1.7.0-openjdk-devel
 # Install Tomcat
 # NOTE: tomcat could be installed by RPM, but its less clear what changes to make compared to a vanilla bin
 RUN curl -L -O http://apache.mirrors.tds.net/tomcat/tomcat-7/v7.0.67/bin/apache-tomcat-7.0.67.tar.gz
-RUN cd /usr/local && tar xvfz /root/apache-tomcat-7.0.67.tar.gz 
+RUN cd /usr/local && tar xfz /root/apache-tomcat-7.0.67.tar.gz 
 RUN ln -s /usr/local/apache-tomcat-7.0.67 /usr/local/tomcat
 # This wrapper is not useful outside of a supervisord env
 ADD supervisord_wrapper.sh /usr/local/tomcat/bin/supervisord_wrapper.sh
@@ -107,7 +107,7 @@ RUN cp ~/.m2/repository/mysql/mysql-connector-java/5.1.16/mysql-connector-java-5
 ### Load the sample study ###
 
 RUN curl -L -O http://cbio.mskcc.org/cancergenomics/public-portal/downloads/brca-example-study.tar.gz
-RUN tar xvfz brca-example-study.tar.gz
+RUN tar xfz brca-example-study.tar.gz
 ENV CONNECTOR_JAR /usr/local/tomcat/lib/mysql-connector-java-5.1.16.jar
 ENV CORE_JAR $PORTAL_HOME/core/target/core-1.0.3.jar
 
