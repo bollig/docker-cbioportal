@@ -88,6 +88,7 @@ RUN ( cd /usr ; /usr/bin/mysqld_safe & ) \
 
 # Setup cbioportal compilation
 RUN mkdir -p /root/.m2
+ENV JAVA_HOME /usr/lib/jvm/java
 ADD maven_settings.xml  /root/.m2/settings.xml
 
 ENV PORTAL_HOME /root/cbioportal
@@ -109,7 +110,6 @@ RUN curl -L -O http://cbio.mskcc.org/cancergenomics/public-portal/downloads/brca
 RUN tar xvfz brca-example-study.tar.gz
 ENV CONNECTOR_JAR /usr/local/tomcat/lib/mysql-connector-java-5.1.16.jar
 ENV CORE_JAR $PORTAL_HOME/core/target/core-1.0.3.jar
-ENV JAVA_HOME /usr/lib/jvm/java
 
 # I kept getting an error: "zero length field name in format" when loading
 # meta-data. This is due to Python 2.6.6. Upgrade to python 2.7 or 3.1+ and it
