@@ -11,13 +11,13 @@ None. Don't expect any support, because I don't expect to provide any. No copyri
 Build the container image with:
 
     git clone https://github.com/bollig/docker-cbioportal.git
-    cd docker-cbioportal && docker build --rm -t cbioportal .
+    cd docker-cbioportal && docker build --rm -t bollig/cbioportal .
   GO GET LUNCH, THIS TAKES A WHILE
 
 ## Run
 Run the container with:
 
-    docker run --rm -p 8080:8080 --name cbioportal -it cbioportal
+    docker run --rm -p 8080:8080 --name cbioportal -it bollig/cbioportal
 
 ## Test
 Test by pointing a browser to: http://localhost:8080/cbioportal
