@@ -1,6 +1,8 @@
 # docker-cbioportal
 A minimal standalone Docker container running the cBioPortal for Cancer Genomics (http://www.cbioportal.org/). Based on Centos. 
 
+A pre-built Docker image is available on DockerHub: https://hub.docker.com/r/bollig/cbioportal/ . To use it, jump straight to the Run section (below). 
+
 ## Summary
 The image is based on centos:6 so you should have a much easier time deploying a complete VM if this ever goes to production. For testing, I'd suggest running the container on top of a vanilla VM and avoid all the additional headache.
 
